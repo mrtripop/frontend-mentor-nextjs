@@ -1,13 +1,18 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./button";
 
 const Rating = ({ onClick, onSubmit }) => {
-  const [selected, setSelected] = useState(0);
   const [hoverSubmit, setHoverSubmit] = useState({
     backgroundColor: "rgb(249 115 22)",
     color: "white",
   });
+  const [selected, setSelected] = useState(0);
+  const styleSelected = {
+    backgroundColor: "rgb(249 115 22)",
+    color: "white",
+  };
+
   return (
     <div className="flex justify-center">
       <div className="w-96 h-96 bg-gray-800 rounded-3xl p-8">
@@ -29,31 +34,31 @@ const Rating = ({ onClick, onSubmit }) => {
         <div className="flex flex-row space-x-6 my-7 justify-center">
           <Button
             number={1}
-            selected={selected}
+            styleSelected={selected === 1 ? styleSelected : null}
             onClick={onClick}
             onSelect={setSelected}
           />
           <Button
             number={2}
-            selected={selected}
+            styleSelected={selected === 2 ? styleSelected : null}
             onClick={onClick}
             onSelect={setSelected}
           />
           <Button
             number={3}
-            selected={selected}
+            styleSelected={selected === 3 ? styleSelected : null}
             onClick={onClick}
             onSelect={setSelected}
           />
           <Button
             number={4}
-            selected={selected}
+            styleSelected={selected === 4 ? styleSelected : null}
             onClick={onClick}
             onSelect={setSelected}
           />
           <Button
             number={5}
-            selected={selected}
+            styleSelected={selected === 5 ? styleSelected : null}
             onClick={onClick}
             onSelect={setSelected}
           />
